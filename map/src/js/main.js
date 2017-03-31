@@ -135,7 +135,6 @@ jQuery(document).ready(function() {
         }
 
         var elem = document.createElement('a')
-        console.log(content)
         elem.setAttribute('href', 'data:application/json;charset=utf-8,' + JSON.stringify(content))
         elem.setAttribute('download', 'points_' + getSeed() + '.json') // Pour avoir un fichier unique à chaque exportation
         elem.style.display = 'none'

@@ -34,7 +34,7 @@ var getSeed = function() {
 var addPoint = function(point, seed) {
     if (point instanceof Point || point.label && point.lat && point.lng && point.cat) {
         var icon = {
-            url: '../img/' + point.cat + '.png',
+            url: 'img/' + point.cat + '.png',
             size: new google.maps.Size(85, 122),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(25 / 2, 25 / 85 * 122),

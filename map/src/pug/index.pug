@@ -1,0 +1,56 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Projet JS
+        link(rel="stylesheet", href="css/main.css")
+        link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:400,600")
+        link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    body
+        .drag
+            .drag__title Lâchez le ficher pour importer les points :D
+        
+        aside.sidebar
+            .categories
+                .category
+                    .category__title(data-id="1") Lieux culturels
+                    ul.category__content
+                .category
+                    .category__title(data-id="2") Restaurants
+                    ul.category__content
+                .category
+                    .category__title(data-id="3") Ecoles
+                    ul.category__content
+            button(type="button").btn.btn-add Ajouter un point
+            button(type="button").btn.btn-export Exporter les points
+            button(type="button").btn.btn-import Importer des points
+            
+        .modal.add
+            .modal__title Ajouter un nouveau point
+                button(type="button").modal__close: i.fa.fa-times
+            .modal__content
+                form.form.form-add(method="POST", action="#")
+                    .form__input
+                        input(type="text", name="label", placeholder=" ")#label
+                        label(for="label") Libellé
+                    .form__input
+                        input(type="number", name="lat", placeholder=" ", step="any")#lat
+                        label(for="lat") Latitude
+                    .form__input
+                        input(type="number", name="lng", placeholder=" ", step="any")#lng
+                        label(for="lng") Longitude
+                    .form__checkboxes
+                    button(type="submit").btn Ajouter
+                    
+        .modal.import
+            .modal__title Importer des points
+                button(type="button").modal__close: i.fa.fa-times
+            .modal__content
+                p Pour importer des points, faites simplement glisser le fichier de points au format JSON sur la fenêtre ;)
+            
+        .map#map
+        
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+        script(src="https://maps.googleapis.com/maps/api/js?callback=initMap", async, defer)
+        script(src="js/main.js")

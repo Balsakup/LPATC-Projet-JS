@@ -1,0 +1,221 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 0;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body, html {
+  background-color: #EEE;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000; }
+
+* {
+  box-sizing: border-box; }
+
+.map {
+  width: 100vw;
+  height: 100vh; }
+
+.sidebar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 8888;
+  min-width: 300px; }
+  .sidebar > :not(:first-child) {
+    margin-top: 10px; }
+  .sidebar > * {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); }
+  .sidebar .categories {
+    background-color: #FFF;
+    padding: 10px 0; }
+    .sidebar .categories .category {
+      color: #424242;
+      text-transform: uppercase;
+      font-size: .9em;
+      font-weight: 600; }
+      .sidebar .categories .category:hover .category__title {
+        background-color: #f2f2f2; }
+      .sidebar .categories .category .category__title {
+        padding: 15px 20px;
+        cursor: pointer;
+        -webkit-transition-duration: .5s;
+                transition-duration: .5s; }
+      .sidebar .categories .category .category__content {
+        display: none; }
+        .sidebar .categories .category .category__content li {
+          position: relative;
+          font-size: .9em;
+          padding: 10px 20px 10px 30px;
+          cursor: pointer;
+          -webkit-transition-duration: .5s;
+                  transition-duration: .5s; }
+          .sidebar .categories .category .category__content li[data-visible]::after {
+            position: absolute;
+            right: 20px;
+            font-family: fontawesome; }
+          .sidebar .categories .category .category__content li[data-visible="true"]::after {
+            content: "\f06e"; }
+          .sidebar .categories .category .category__content li[data-visible="false"]::after {
+            content: "\f070"; }
+          .sidebar .categories .category .category__content li:hover {
+            background-color: #e6e6e6; }
+
+.btn {
+  background-color: #4CAF50;
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s; }
+  .btn:hover {
+    background-color: #5cb860; }
+  .btn.btn-export {
+    background-color: #2196F3; }
+    .btn.btn-export:hover {
+      background-color: #39a1f4; }
+  .btn.btn-import {
+    background-color: #F44336; }
+    .btn.btn-import:hover {
+      background-color: #f55a4e; }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9900;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  background-color: #FFF;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  width: 300px; }
+  .modal .modal__title {
+    background-color: #66BB6A;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: .9em;
+    font-weight: 600;
+    padding: 20px; }
+    .modal .modal__title .modal__close {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      float: right;
+      color: #FFF;
+      cursor: pointer; }
+  .modal .modal__content {
+    padding: 20px; }
+    .modal .modal__content p {
+      line-height: 1.2em;
+      color: #424242; }
+
+.form .form__input {
+  position: relative;
+  padding-top: 30px; }
+  .form .form__input label {
+    position: absolute;
+    top: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #BDBDBD;
+    font-size: .9em;
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transition-duration: .5s;
+            transition-duration: .5s; }
+  .form .form__input input {
+    border: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    width: 100%;
+    height: 40px;
+    border-bottom: 2px solid #BDBDBD;
+    -webkit-transition-duration: .5s;
+            transition-duration: .5s; }
+    .form .form__input input:focus, .form .form__input input:not(:placeholder-shown) {
+      border-bottom-color: #4CAF50; }
+      .form .form__input input:focus + label, .form .form__input input:not(:placeholder-shown) + label {
+        color: #4CAF50;
+        -webkit-transform: scale(0.8) translateY(0);
+                transform: scale(0.8) translateY(0); }
+
+.form .form__checkboxes {
+  padding-top: 10px; }
+  .form .form__checkboxes label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #424242;
+    font-size: .9em;
+    height: 40px;
+    line-height: 40px; }
+    .form .form__checkboxes label input {
+      outline: none;
+      margin-right: 10px; }
+
+.form .btn {
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); }
+
+.drag {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .drag .drag__title {
+    text-align: center;
+    color: #FFF;
+    font-size: 2em;
+    text-shadow: 0 1px 1px #000;
+    font-weight: 600;
+    line-height: 100vh; }

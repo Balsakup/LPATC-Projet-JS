@@ -201,8 +201,6 @@ jQuery(document).ready(function() {
             label.value = ''
             lat.value   = ''
             lng.value   = ''
-        } else {
-            console.log('PAS BON')
         }
     })
 

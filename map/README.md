@@ -1,4 +1,6 @@
 # LPATC-Projet-JS
+[demo](https://balsakup.github.io/LPATC-Projet-JS/map/)
+
 Ceci est le répertoire du projet de Javascript pour la session 2016-2017 de la licence pro ATC spécialité Webmestre de la fac de Caen.
 
 ## Comment ça fonctionne ?
